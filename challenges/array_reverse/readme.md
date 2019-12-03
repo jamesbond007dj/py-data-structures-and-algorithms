@@ -13,3 +13,4 @@ These 3 methods worked very well.
 I tried also indexing. I could print array objects reverse line by line however I could not put them in array. Always I get reverse first one object only. 
 
 ## Solution
+![picture](./assets/array-reverse.jpeg)
