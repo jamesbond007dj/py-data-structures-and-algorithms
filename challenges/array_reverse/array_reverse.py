@@ -1,5 +1,5 @@
 # def Reverse(arr):
-#     return [ele for ele in reversed(arr)]
+#     return [i for i in reversed(arr)]
 
 
 # arr = [1, 5, 8, 10]
@@ -24,4 +24,5 @@ def Reverse(arr):
 arr = [1, 5, 8, 10]
 print(Reverse(arr))
 
-# Above Method 3 : rversing an array using slicing tech. I learnt it from geeksforgeeks.org
+# Above Method 3 : reversing an array using slicing tech. I learnt it from geeksforgeeks.org
+
