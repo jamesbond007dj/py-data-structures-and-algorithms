@@ -46,3 +46,14 @@ def test_arr_strings():
     actual = insert_shift_array(arr, val)
 
     assert actual == expected
+
+@pytest.mark.skip('pending')
+def test_arr_failure():
+    arr = [1,2,3,4]
+    val = 6
+
+    expected = [1,6,2,3,4]
+    actual = insert_shift_array(arr, val)
+
+    assert actual == expected
+# above test expected failure test, consciously i put a wrong test and I skip it.
