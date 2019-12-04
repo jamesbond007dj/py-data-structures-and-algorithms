@@ -4,7 +4,7 @@ These are the code-challenges to develop and improve Python coding and Whiteboar
 
 ## Challenges
 
- 1. **array-reverse challenge
+ 1. **array-reverse challenge**
      - [x] Reversed function method with for loop
      - [x] Reverse function method
      - [x] Slicing method with if statement
