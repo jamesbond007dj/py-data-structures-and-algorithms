@@ -1,38 +1,58 @@
-from linked_list import Linkedlist
-import Node
-import pytest
-
-def test_empty():
-    lst = Linkedlist()
-    expected = False
-    actual = lst.includes(1)
-    assert actual == expected
+from linked_list import LinkedList
 
 def test_insert():
-    lst = Linkedlist()
-    lst.insert(3)
-    expected = '3'
-    actual = lst.to_string()
+    ll = LinkedList()
+    ll.insert(2)
+    expected = '2'
+    actual = ll.to_string()
     assert actual == expected
 
-def test_true():
-    lst = Linkedlist()
-    lst.insert(2)
-    expected = True
-    actual = lst.includes(2)
-    assert actual == expected
-
-def test_false():
-    lst = Linkedlist()
-    lst.insert(2)
+def test_include_empty():
+    ll =  LinkedList()
     expected = False
-    actual = lst.includes(3)
+    actual = ll.includes(1)
     assert actual == expected
 
-def test_string_of2():
-    lst = Linkedlist()
-    lst.insert(2)
-    lst.insert(3)
-    expected = '3 2'
-    actual = lst.includes()
+def test_include_true():
+    ll =  LinkedList()
+    ll.insert(1)
+    expected = True
+    actual = ll.includes(1)
+    assert actual == expected
+
+def test_include_false():
+    ll =  LinkedList()
+    ll.insert(1)
+    expected = False
+    actual = ll.includes(2)
+    assert actual == expected
+
+def test_include_three_true():
+    ll =  LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    expected = True
+    actual = ll.includes(2)
+    assert actual == expected
+
+def test_to_string():
+    ll =  LinkedList()
+    ll.insert(1)
+    expected = '1'
+    actual = ll.to_string()
+    assert actual == expected
+
+def test_to_string_empty():
+    ll = LinkedList()
+    expected = ''
+    actual = ll.to_string()
+    assert actual == expected
+
+def test_to_string_two():
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    expected = '2 1'
+    actual = ll.to_string()
     assert actual == expected

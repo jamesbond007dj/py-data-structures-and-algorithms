@@ -1,51 +1,69 @@
-class Linkedlist:
-    def __init__(self, data, next_data):
-        self.data = data
-        self.next_data = next_data
+from node import Node
+
+class LinkedList:
+
+    def __init__(self):
         self.head = None
 
-    def includes(self, data):
-        if not self.head
-            return False
+    def insert(self, value):
+        value = Node.is_node(value)
+        value.next = self.head
+        self.head = value
+        self._length +=1
 
+    def includes(self, value):
+        if not self.head:
+            return False
         current = self.head
 
         while current:
-            if current.get_data() == data:
-                retun True
-            current = current.get.next_data()
-            return False
+            if current.get_value() == value:
+                return True
+            current = current.get_next()
+        return False
 
-    def insert(self, data):
-        start_node = self.head
-        new_node = Node(data,start_node)
-        self.head = new_node
-        self.size += 1
+    def to_string(self):
+        output = ''
+        node = self.head
 
-    def __str__(self):
-        self.size > 1
-        return str(LinkedList)
+        while node != None:
+            output += f'{node.get_value()}'
+            node = node.get_next()
 
+        return output.strip()
 
-class Node:
-    def __init__(self, data, next_data):
-        self data = data
-        self next_data = next_data
+    def append(self, value):
+        current = self.head
+        while current:
+            if current.next == None
+            current.next = Node(value)
+            return self.__str__() 
+        else:
+            current = current.next
 
-    def __repr__(self):
-        return f'{self.data} - {self.next_data}'
+    def insert_before(value, next_value):
+        if self.includes(value):
+            current = self.head
+            while current:
+                if current.value == value:
+                    node = Node(new_value)
+                    node.next = current
+                    previous.next = node
+                    return self.__str__() 
+                previous = current 
+                current = current.next
+                else:
+                    return 'Value is not in the list'
 
-    def __str__(self):
-        return f'The node has a value {self.data} and the next node will be {self.next_data}'
-
-    def get_data(self):
-        return self.get_data
-
-    def get_next_data ():
-        return self.next_data
-
-    def set data(self, data):
-        self.data = data
-
-    def set next_data (self, next_data):
-        self.data = next_data
+        def insert_after(value, next_value):
+        if self.includes(value):
+            current = self.head
+            while current:
+                if current.value == value:
+                    node = Node(new_value)
+                    node.next = current.next
+                    current.next = Node 
+                    return self.__str__() 
+                current = current.next
+                else:
+                    return 'Value is not in the list'
