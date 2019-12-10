@@ -20,3 +20,8 @@ space complexities.
 ## API
 
 The linked list class has an attribute head, insert adds a node to in front of head attribute and makes it new head, includes search a node whether it is in linked list or not and to_string returns a string result.
+
+## Solution
+![picture](./assets/linked-list-2.jpeg)
+
+https://github.com/jamesbond007dj/py-data-structures-and-algorithms/pull/7
