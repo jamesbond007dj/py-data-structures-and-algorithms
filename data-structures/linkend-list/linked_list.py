@@ -6,10 +6,10 @@ class LinkedList:
         self.head = None
 
     def insert(self, value):
-        value = Node.is_node(value)
-        value.next = self.head
-        self.head = value
-        self._length +=1
+        node = Node(value)
+        node.next = self.head
+        self.head = node
+        
 
     def includes(self, value):
         if not self.head:
@@ -35,15 +35,19 @@ class LinkedList:
     def append(self, value):
         current = self.head
         while current:
-            if current.next == None
-            current.next = Node(value)
-            return self.__str__() 
-        else:
-            current = current.next
+            print(current.value)
+            if current.next == None:
+                current.next = Node(value)
+                return self.__str__() 
+            else:
+                current = current.next
+        self.head = Node(value)
+        return self.__str__()
 
-    def insert_before(value, next_value):
+    def insert_before(self, value, new_value):
         if self.includes(value):
             current = self.head
+            previous = current
             while current:
                 if current.value == value:
                     node = Node(new_value)
@@ -52,10 +56,10 @@ class LinkedList:
                     return self.__str__() 
                 previous = current 
                 current = current.next
-                else:
-                    return 'Value is not in the list'
+        else:
+            return 'Value is not in the list'
 
-        def insert_after(value, next_value):
+    def insert_after(self, value, new_value):
         if self.includes(value):
             current = self.head
             while current:
@@ -65,5 +69,5 @@ class LinkedList:
                     current.next = Node 
                     return self.__str__() 
                 current = current.next
-                else:
-                    return 'Value is not in the list'
+        else:
+            return 'Value is not in the list'

@@ -1,8 +1,8 @@
 class Node:
 
-    def __init__(self, value, next):
+    def __init__(self, value):
         self.value = value
-        self.next = next
+        self.next = None
 
     def __repr__(self):
         return f'{self.value} - {self.next}'
