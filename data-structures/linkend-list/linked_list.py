@@ -22,7 +22,7 @@ class LinkedList:
             current = current.get_next()
         return False
 
-    def to_string(self):
+    def __str__(self):
         output = ''
         node = self.head
 
@@ -71,3 +71,16 @@ class LinkedList:
                 current = current.next
         else:
             return 'Value is not in the list'
+
+        # def ll_kth_from_end(self, k):
+        #     current = self.head
+        #     count = 0
+        #     while current.next:
+        #         current= current.next
+        #         count+=1
+        #     current=self.head 
+        #     if k > count :
+        #         return 'Exception'
+        #     for i in range(count - k)
+        #         current= current.next
+        #     return current.value
