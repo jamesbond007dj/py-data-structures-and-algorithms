@@ -1,15 +1,16 @@
 class Node:
 
     def __init__(self, value):
-        self.value = value
+        self.value = str(value)
         self.next = None
 
     def __repr__(self):
-        return f'{self.value} - {self.next}'
+        return f'{self.value} - {repr(self.next)}'
+
 
     
-    def __str__(self):
-        return f'The current node has a value {self.value}, and the next node is {self.next}'
+    # def __str__(self):
+    #     return f'The current node has a value {self.value}, and the next node is {self.next}'
        
     def get_value(self):
         return self.value
@@ -22,12 +23,10 @@ class Node:
 
 
 
-
-
 class LinkedList:
 
-    def __init__(self):
-        self.head = None
+    def __init__(self, head=None):
+        self.head = head
 
     def insert(self, value):
         node = Node(value)
@@ -68,16 +67,22 @@ class LinkedList:
 def merge_lists(ll_one, ll_two):
     current_one = ll_one.head
     current_two = ll_two.head
+    if current_one ==None:
+        current_one = current_two
+    else:
+        while current_one !=None and current_two !=None:
 
-    while current_one !=None and current_two:
-        one_next = current_one.next
-        two_next = current_two.next
+            one_next = current_one.next
+            two_next = current_two.next
 
-        current_one.next = current_two
-        current_two.next = one_next
+            current_one.next = current_two
+            if one_next == None:
+                break
+            current_two.next = one_next
 
-        current_one = one_next
-        current_two = two_next
-    return ll_one.head
+            current_one = one_next
+            current_two = two_next
+        return ll_one.head
+    
 
     
