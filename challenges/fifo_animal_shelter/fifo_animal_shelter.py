@@ -1,18 +1,26 @@
 class Node:
-    def __init__(self, x, next_node=None):
-        self.value = x
-        self.next = next_node
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
 
-class Dog:
+class Animal:
+   def __init__(self, type=None):
+       self.type = None
+        
+
+class Dog(Animal):
     def __init__(self, type=None):
         self.type = 'dog'
 
 
-class Cat:
+class Cat(Animal):
     def __init__(self, type=None):
         self.type = 'cat'
 
+class Stack:
+	def __init__(self):
+		self.top = None
 
 class FifoAnimalShelter:
     def __init__(self, top=None):
@@ -21,7 +29,7 @@ class FifoAnimalShelter:
         self.st_2 = Stack()
 
     def enqueue(self, animal):
-        if animal.type !='dog' or 'cat':
+        if animal.type.lower() !='dog' or 'cat':
             return 'we can only accept cat or dog'
         else:
             node = Node(animal)
