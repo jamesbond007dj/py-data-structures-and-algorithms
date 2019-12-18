@@ -18,9 +18,31 @@ class Cat(Animal):
     def __init__(self, type=None):
         self.type = 'cat'
 
+
 class Stack:
-	def __init__(self):
-		self.top = None
+  def __init__(self, top = None):
+    self.top = top
+
+  def push(self, value):
+    next_top = Node(value)
+    self.top = next_top
+
+  def pop(self):
+    if not isinstance(self.top, Node):
+        print('Empty List')
+    st_2 = self.top
+    self.top = self.top.next
+    return st_2.value
+
+  def peek(self):
+    if isinstance(self.top, Node):
+      return self.top.value
+    
+
+  def is_empty(self):
+    if self.top:
+      return False
+    return True
 
 class FifoAnimalShelter:
     def __init__(self, top=None):
