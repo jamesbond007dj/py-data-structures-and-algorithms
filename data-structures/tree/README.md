@@ -1,4 +1,4 @@
-## Trees
+# Trees
 The goal fo this code challenge is to make a data tree class
 
 ## Challenge
