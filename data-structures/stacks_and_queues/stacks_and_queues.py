@@ -54,21 +54,11 @@ class Stack:
         return current.value  
 
         
-    def peek(self, k):
-        if k < 0:
-            return 'Negative k has no value'
+    def peek(self):
+        if self.top ==None:
+            return 
         else:
-            current = self.top
-            count=0
-            while current.next:
-                current= current.next
-                count += 1
-            current=self.top
-            if k > count:
-                return 'No value'
-            for k in range(count - k):
-                current = current.next
-            return current.value
+            return self.top.value
 
 
     def is_empty(self):
@@ -101,17 +91,18 @@ class Queue:
         node = Node(value)
         node.next = self.rear
         self.rear = node
-        return self.rear
+        if not self.front:
+            self.front = self.rear
+        
 
     def dequeue(self):
-        if self.rear == None:
-            return
+        if not self.front:
+            raise EmptyQueueException('Empty')
         else:
             node = self.front
-            self.front = self.front.next
-            self.next = None
-            self.size -=1
-            return node
+            self.front = node.next
+            node.next = None
+            
 
     def peek(self):
         if self.rear == None:
@@ -121,7 +112,7 @@ class Queue:
             current = current.next
             if current.next == None:
                 current = self.front
-            return current
+            return current.value
 
     def is_empty_queue(self):
         current = self.rear

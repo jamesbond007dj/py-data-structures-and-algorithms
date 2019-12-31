@@ -1,17 +1,6 @@
 from stacks_and_queues import Node, Stack, Queue
 import pytest
 
-"""
-Below test happy feet
-function push  argument
-"""
-def test_push():
-    st = Stack()
-    values = [1,2,3,8]
-    for el in values:
-        st.push(el)
-    actual = st.push(6)
-    assert "68321" == str(actual)
 
 """
 Below test edge situation
@@ -55,66 +44,7 @@ def test_pop_empty():
     st = Stack()
     assert None == st.pop()
 
-"""
-Below test happy feet
-kth node value shown
-"""
-def test_peek():
-    st = Stack()
-    values = [1,2,3,8]
-    for el in values:
-        st.push(el)
-    actual = st.peek(3)
-    assert 8 == actual
 
-"""
-Below test happy feet
-kth node value shown
-"""
-def test_peek_2():
-    st = Stack()
-    values = [1,2,3,8]
-    for el in values:
-        st.push(el)
-    actual = st.peek(1)
-    assert 2 == actual
-"""
-Below test happy feet
-kth node value shown
-"""
-def test_peek_3():
-    st = Stack()
-    values = [1,2,3,8]
-    for el in values:
-        st.push(el)
-    actual = st.peek(0)
-    assert 1 == actual
-
-"""
-Below test edge situation
-kth node value if k is negative number 
-then even can not ask to top, so it is no value
-"""
-def test_peek_negative():
-    st = Stack()
-    values = [1,2,3,8]
-    for el in values:
-        st.push(el)
-    actual = st.peek(-1)
-    assert 'Negative k has no value' == actual
-
-"""
-Below test edge situation
-kth node value if k is bigger than Stack len, 
-can not fined value so says no value
-"""
-def test_peek_bigger__than_len():
-    st = Stack()
-    values = [1,2,3,8]
-    for el in values:
-        st.push(el)
-    actual = st.peek(4)
-    assert 'No value' == actual
 """
 Below test Stuck is not empty and is_empty function confirms it by Booleen False
 """
@@ -137,17 +67,6 @@ def test_is_empty_really_empty():
     actual = st.is_empty()
     assert True == actual
 
-"""
-Below test happy feet
-function adds argument to rear of queue
-"""
-def test_enqueue():
-    q = Queue()
-    values = [1,2,3,8]
-    for el in values:
-        q.enqueue(el)
-    actual = q.enqueue(6)
-    assert "68321" == actual
 
 """
 Below test edge situation
@@ -158,17 +77,7 @@ def test_enqueue_to_empty():
     q.enqueue(8)
     assert "8" == str(q)
 
-"""
-Below test happy feet
-function pops integer argument
-"""
-def test_dequeue():
-    q = Queue()
-    values = [1,2,3,8]
-    for el in values:
-        q.enqueue(el)
-    actual = q.dequeue()
-    assert 1 == actual.value
+
 """
 Below test happy feet
 function peek integer argument
@@ -178,8 +87,9 @@ def test_peek():
     values = [1,2,3,8]
     for el in values:
         q.enqueue(el)
+    expected = 3
     actual = q.peek()
-    assert 3 == actual.value
+    assert expected == actual
 
 """
 Below test Queue is not empty and is_empty function confirms it by Booleen False
