@@ -118,7 +118,7 @@ class BinaryTree:
     def breadth_first(self, node=None, arr = None):
         if not self._root:
            return None
-        q = Queue()
+        q= Queue()
         arr = []
         q.enqueue(self._root)
         while not q.is_empty():
@@ -129,6 +129,23 @@ class BinaryTree:
                 q.enqueue(current.right)
             arr.append(current.value)
         return arr
+
+    def find_max_value(self, node = None):
+        node = node or self._root
+        max = self._root.value
+        if node is None:
+            return None
+        q = Queue()
+        q.enqueue(self._root)
+        while not q.is_empty():
+            current = q.dequeue()
+            if current.value > max:
+                max = current.value
+            if current.left:
+                q.enqueue(current.left)
+            if current.right:
+                q.enqueue(current.right)
+        return max
 
 class BinarySearchTree(BinaryTree):
     def add(self, value):
