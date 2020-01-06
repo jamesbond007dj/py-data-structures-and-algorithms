@@ -1,3 +1,5 @@
+import pytest
+
 class Node:
     def __init__(self, value=None, left=None, right=None):
         self.value = value
