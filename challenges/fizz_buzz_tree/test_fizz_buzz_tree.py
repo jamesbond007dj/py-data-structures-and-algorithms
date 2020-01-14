@@ -32,7 +32,6 @@ def value_tree():
 
     """
     HAPPY FEET TEST
-
     """
 
 def test_fizz_buzz_tree(value_tree):
