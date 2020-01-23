@@ -13,4 +13,4 @@ if key is not in the table, create an object with key of table one , the value o
 Return the list
 
 ## Solution
-![picture](./left_join.jpg
+![picture](./left_join.jpg)
