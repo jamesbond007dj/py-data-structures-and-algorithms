@@ -1,4 +1,4 @@
-# Data Structures - Graph (Get Edge Function)
+# Data Structures - Graph (breadth_first)
 
 **Author**: James Bond
 **Version**: 1.0.0
